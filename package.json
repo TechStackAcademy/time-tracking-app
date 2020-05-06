@@ -1,0 +1,38 @@
+{
+  "name": "Timer",
+  "version": "0.1.0",
+  "description": "Timer application build with Electron",
+  "author": {
+    "name": "Alex Chaplinsky",
+    "email": ""
+  },
+  "repository": {},
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "nanoid": "^3.1.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "bozon": "1.0.3",
+    "jest": "25.5.4",
+    "react-svg-loader": "^3.0.3",
+    "spectron": "10.0.1",
+    "webpack": "^4.43.0"
+  },
+  "build": {
+    "appId": "com.electron.timer",
+    "win": {
+      "publish": null
+    },
+    "mac": {
+      "publish": null,
+      "category": "your.app.category.type"
+    }
+  }
+}

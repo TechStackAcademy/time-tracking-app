@@ -1,0 +1,45 @@
+.new-entry {
+  display: flex;
+  padding: 15px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.new-entry .details {
+  flex: 2;
+}
+
+.new-entry .actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.new-entry .trigger {
+  margin: 5px 0 0 10px;
+  cursor: pointer;
+}
+.new-entry .trigger svg path {
+  fill: #555;
+}
+.new-entry .trigger:hover svg path {
+  fill: #3498db;
+  transition: fill .2s ease;
+}
+
+.new-entry textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 5px;
+  font-size: 15px;
+  width: 60%
+}
+
+.new-entry.disabled {
+  background-color: #fafafa;
+}
+
+.new-entry.disabled textarea {
+  background-color: #fafafa;
+  color: #777;
+}
