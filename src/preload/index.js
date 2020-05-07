@@ -17,3 +17,11 @@ window.stopTimer = () => {
 window.subscribeForTimer = callback => {
   ipcRenderer.on('tick', callback)
 }
+
+window.subscribeForEntries = callback => {
+  ipcRenderer.on('entries', callback)
+}
+
+window.saveEntry = data => {
+  ipcRenderer.send('save', data)
+}

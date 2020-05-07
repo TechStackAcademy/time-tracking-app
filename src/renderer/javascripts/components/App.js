@@ -3,11 +3,11 @@ import React from 'react'
 import { NewEntry } from './NewEntry'
 import { List } from './List'
 
-export const App = () => {
+export const App = ({ entries }) => {
   return (
     <>
       <NewEntry />
-      <List />
+      <List entries={entries} />
     </>
   )
 }

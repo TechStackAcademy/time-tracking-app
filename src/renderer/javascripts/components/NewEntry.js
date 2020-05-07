@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import classnames from 'classnames'
+import { DateTime } from 'luxon'
 import { nanoid } from 'nanoid'
+import { durationToTime } from 'helpers/time'
 import PlayIcon from 'play.svg'
 import StopIcon from 'stop.svg'
 
@@ -17,8 +19,14 @@ export const NewEntry = () => {
   }, [])
 
   const handleStopTimer = () => {
-    stopTimer().then(time => {
-      const entry = { id: nanoid(), time: time, title: title, project: 'None' }
+    stopTimer().then(duration => {
+      window.saveEntry({
+        id: nanoid(),
+        duration: duration,
+        title: title,
+        project: 'None',
+        createdAt: DateTime.local().toISO()
+      })
       setTitle('')
       setTime(0)
       setRunning(false)
@@ -27,12 +35,6 @@ export const NewEntry = () => {
 
   const handleStartTimer = () => {
     window.startTimer()
-  }
-
-  const formattedTime = () => {
-    const date = new Date(0)
-    date.setSeconds(time)
-    return date.toISOString().substr(11, 8)
   }
 
   return (
@@ -47,7 +49,7 @@ export const NewEntry = () => {
         ></textarea>
       </div>
       <div className="actions">
-        <div className="time">{formattedTime()}</div>
+        <div className="time">{durationToTime(time)}</div>
         <div
           className={classnames('trigger', { disabled: title === ''})}
           onClick={running ? handleStopTimer : handleStartTimer}

@@ -1,12 +1,13 @@
 import path from 'path'
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { Timer } from './timer'
-
+import { Storage } from './storage'
 
 export default class TimerApp {
 
   constructor() {
     this.timer = new Timer()
+    this.storage = new Storage()
     app.whenReady().then(() => this.createWindow())
 
     app.on('window-all-closed', () => {
@@ -26,6 +27,13 @@ export default class TimerApp {
     ipcMain.on('timer:stop', () => {
       const time = this.timer.stop()
       this.window.webContents.send('timer:stopped', { time })
+    })
+
+    ipcMain.on('save', (_, data) => {
+      const entries = this.storage.get('entries') || []
+      entries.push(data)
+      this.storage.set('entries', entries)
+      this.window.webContents.send('entries', { entries })
     })
   }
 
@@ -48,6 +56,10 @@ export default class TimerApp {
     this.timer.onChange = () => {
       this.window.webContents.send('tick', { time: this.timer.get() })
     }
+
+    this.window.webContents.on('did-finish-load', () => {
+      this.window.webContents.send('entries', { entries: this.storage.get('entries') })
+    })
 
     this.window.on('closed', () => {
       this.timer.onChange = null

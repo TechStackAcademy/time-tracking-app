@@ -1,6 +1,7 @@
 import React from 'react'
+import { durationToTime } from 'helpers/time'
 
-export const Item = ({ title, project, time }) => {
+export const Item = ({ title, project, duration }) => {
   return (
     <div className="entry">
       <div className="details">
@@ -8,7 +9,7 @@ export const Item = ({ title, project, time }) => {
         <div className="secondary">{project}</div>
       </div>
       <div className="actions">
-        <div className="time">{time}</div>
+        <div className="time">{durationToTime(duration)}</div>
       </div>
     </div>
   )
