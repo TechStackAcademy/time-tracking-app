@@ -2,12 +2,9 @@ import React from 'react'
 import { orderBy } from 'lodash'
 import { Item } from './Item'
 
-export const List = ({ entries }) => {
+export const Entries = ({ entries }) => {
   return (
     <div className="entries">
-      {/* <div className="divider">
-        Monday, 4 May
-      </div> */}
       {orderBy(entries, 'createdAt', 'desc').map(entry =>
         <Item
           key={entry.id}

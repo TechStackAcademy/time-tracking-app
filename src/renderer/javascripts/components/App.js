@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { NewEntry } from './NewEntry'
-import { List } from './List'
+import { New } from './new'
+import { Entries } from './entries'
 
 export const App = ({ entries }) => {
   return (
     <>
-      <NewEntry />
-      <List entries={entries} />
+      <New />
+      <Entries entries={entries} />
     </>
   )
 }
