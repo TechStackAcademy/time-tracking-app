@@ -1,7 +1,7 @@
 {
   "name": "timer",
   "version": "0.1.0",
-  "description": "Timer application build with Electron",
+  "description": "Timer application built with Electron",
   "author": {
     "name": "Alex Chaplinsky"
   },
