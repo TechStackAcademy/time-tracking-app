@@ -1,10 +1,9 @@
 {
-  "name": "Timer",
+  "name": "timer",
   "version": "0.1.0",
   "description": "Timer application build with Electron",
   "author": {
-    "name": "Alex Chaplinsky",
-    "email": ""
+    "name": "Alex Chaplinsky"
   },
   "repository": {},
   "dependencies": {
