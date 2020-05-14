@@ -1,6 +1,6 @@
 {
   "name": "Timer",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Timer application built with Electron",
   "author": {
     "name": "Alex Chaplinsky",

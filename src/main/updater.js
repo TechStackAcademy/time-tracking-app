@@ -6,5 +6,5 @@ autoUpdater.logger.transports.file.level = "info"
 
 export const checkForUpdates = () => {
   // Check for updates on GH
-  autoUpdater.checkForUpdates()
+  autoUpdater.checkForUpdatesAndNotify()
 }
