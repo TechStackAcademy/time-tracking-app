@@ -1,15 +1,17 @@
 {
   "name": "Timer",
-  "version": "0.1.0",
+  "version": "0.0.9",
   "description": "Timer application built with Electron",
   "author": {
     "name": "Alex Chaplinsky",
     "email": "alchaplinsky@gmail.com"
   },
   "homepage": "https://github.com/TechStackAcademy/time-tracking-app",
-  "repository": {},
+  "repository": "https://github.com/TechStackAcademy/time-tracking-app",
   "dependencies": {
     "classnames": "^2.2.6",
+    "electron-log": "^4.1.2",
+    "electron-updater": "^4.3.1",
     "lodash": "^4.17.15",
     "luxon": "^1.24.1",
     "nanoid": "^3.1.5",
@@ -31,17 +33,25 @@
   "build": {
     "appId": "com.electron.timer",
     "copyright": "Copyright 2020 Alex Chaplinsky",
+    "publish": [
+      {
+        "provider": "github"
+      }
+    ],
     "win": {
-      "publish": null
+      "certificateFile": "private/certificate.p12",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": false
     },
     "mac": {
-      "category": "public.app-category.productivity",
-      "publish": null
+      "category": "public.app-category.productivity"
     },
     "linux": {
       "category": "Utility",
-      "target": ["AppImage", "deb"],
-      "publish": null
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     }
   }
 }

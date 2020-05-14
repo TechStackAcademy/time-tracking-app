@@ -2,5 +2,6 @@
 node_modules
 builds
 packages
+private
 bower_components
 yarn-error.log
