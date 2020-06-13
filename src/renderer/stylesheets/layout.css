@@ -1,0 +1,27 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body, textarea {
+  font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.titlebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  -webkit-app-region: drag;
+}
+
+.root {
+  margin-top: 30px;
+}

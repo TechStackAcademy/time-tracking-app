@@ -1,0 +1,6 @@
+.tmp
+.vscode
+node_modules
+builds
+packages
+bower_components

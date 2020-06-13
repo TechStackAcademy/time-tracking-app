@@ -1,0 +1,44 @@
+.entry {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.entry:hover {
+  background-color: #F7F7F7;
+  cursor: default;
+  transition: background-color .2s ease;
+}
+
+.entry .details {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.entry .actions {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.entry .primary {
+  margin-bottom: 8px;
+}
+
+.entry .secondary {
+  font-size: 14px;
+  color: #a8a8a8;
+}
+
+.entry .time {
+  color: #777;
+}
+
+.empty-state {
+  padding: 20px;
+  text-align: center;
+  color: #a8a8a8;
+}
